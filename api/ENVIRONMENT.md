@@ -10,18 +10,18 @@ For convenience, we will also load the server environment from any '.env' file i
 
 #### Local
 
-To emulate Azure Blob Storage locally. Azurite needs to be installed and running, more info [here](README.md#local).
-- `EMULATED`: Set to 'true' in order to use the local emulator instead of a hosted instance
+#### S3
 
-#### Azure
-- `AZURE_STORAGE_ACCOUNT`: The name of your hosted Azure storage instance
-- `AZURE_STORAGE_ACCESS_KEY`: The key to your Azure storage instance (if KeyVault credentials are not provided)
+- `AWS_BUCKET_NAME`: The name of your AWS S3 bucket
+- `AWS_ACCESS_KEY_ID`: Your AWS access key ID
+- `AWS_SECRET_ACCESS`: Your AWS secret access key
+- `AWS_REGION`: The AWS region where your S3 bucket is located
 
-### Authentication 
+### Authentication
 
 - `SERVER_URL`: The URL of your server, for local deployment it will be either http://localhost:3000 or https://localhost:8443. For Azure it will be your Azure App URL
 
-#### GitHub OAuth 
+#### GitHub OAuth
 
 - `GITHUB_CLIENT_ID`
 - `GITHUB_CLIENT_SECRET`
@@ -35,6 +35,7 @@ To emulate Azure Blob Storage locally. Azurite needs to be installed and running
 ## Optional parameters
 
 ### HTTPS
+
 - `HTTPS`: Set to 'true' to enable HTTPS for local deployment
 
 ### Debugging
@@ -44,6 +45,7 @@ To emulate Azure Blob Storage locally. Azurite needs to be installed and running
 - `DEBUG_USER_ID`: Backend id of existing user to impersonate when `DEBUG_DISABLE_AUTH` is set to 'true'. Default value: 'default'. 
 
 ### Redis
+
 To enable the Redis caching layer, set:
 
 - `REDIS_HOST`: The IP address where the Redis server is hosted (e.g.: codepush.redis.cache.windows.net)
